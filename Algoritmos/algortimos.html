@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Algoritmo #1 -->
+    <div>
+        <h2>Buscar y sumar pares</h2>
+        <div>
+            <form action="sumarPar.php" method="post">
+                <label for="numero">Ingresa un número para sumar los pares: </label>
+                <input type="number" id="numero" name="numero" />
+                <br><br>
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
+    </div>
+
+    <hr />
+
+    <!-- Algoritmo #2 -->
+    <div>
+        <h2>Calcular el factorial</h2>
+
+        <div>
+            <form action="factorial.php" method="post">
+                <label for="numero-factorial">Ingresa un número para calcular el factorial: </label>
+                <input type="number" id="numero-factorial" name="numero-factorial" />
+                <br><br>
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
+    </div>
+
+    <hr />
+
+    <!-- Algortimo #3 -->
+    <div>
+        <h2>Número primo</h2>
+
+        <div>
+            <form action="numeroPrimo.php" method="post">
+                <label for="numero-primo">Ingresa un número para calcular el factorial: </label>
+                <input type="number" id="numero-primo" name="numero-primo" />
+                <br><br>
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
+    </div>
+
+    <hr />
+
+    <!-- Algoritmo #4 -->
+    <div>
+        <h2>Convertir medida</h2>
+
+        <div>
+            <form action="convertirUnidad.php" method="post">
+                <label for="metro">Ingrese la cantidad de metros a convertir:</label>
+                <input type="number" id="metro" name="metro" />
+
+                <label for="unidad">Convertir a:</label>
+                <select name="unidad" id="unidad">
+                    <option value="pulgadas">Pulgadas</option>
+                    <option value="centimetros">Centímetros</option>
+                    <option value="pies">Pies</option>
+                </select>
+
+                <br /><br />
+
+                <input type="submit" value="convertir" />
+            </form>
+        </div>
+
+        <hr />
+
+        <!-- Algoritmo 5 -->
+         <div>
+            <div>
+                <h2>Buscar número</h2>
+            </div>
+
+            <div>
+                <form action="buscarNumero.php" method="post">
+                    <label for="buscar-numero">Ingrese un número entre 1 y 10</label>
+                    <input type="number" name="buscar-numero" id="buscar-numero" />
+
+                    <br /><br />
+
+                    <input type="submit" value="Buscar" />
+                </form>
+            </div>
+         </div>
+
+        <!-- Algoritmo 6 -->
+        <div>
+            <h2>Secuencias</h2>
+
+            <div>
+                <form action="secuencia.php" method="post">
+                    <label for="tipo">Ingrese longitud de la secuencia: </label>
+                    <input type="number" id="longitud" name="longitud" />
+
+                    <br /><br />
+
+                    <input type="submit" value="Generar" />
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
