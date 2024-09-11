@@ -6,3 +6,12 @@ main {
     border-radius: 10px;
 }
 
+.button {
+    padding: 30px;
+}
+
+.cont-response {
+    border: 2px solid green;
+    padding: 7px;
+    border-radius: 10px;
+}

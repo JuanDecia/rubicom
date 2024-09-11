@@ -16,13 +16,13 @@ $(document).ready(() => {
             const valorPropina = (responseObject.monto * responseObject.propina) / 100;
             const valorTotal = valorPropina + parseFloat(responseObject.monto);
             
-            $('.cont-response').text("El total de su cuenta es: " + valorTotal);
+            $('.response').text("El total de su cuenta es $" + valorTotal);
         }).fail((response) =>{
             console.log(response);
             const responseObject = JSON.parse(response.responseText);
             $('.response').text('Error. ' + responseObject.errorMsg); 
         }).always(() => {
-            $('.cont-response').fadeIn();
+            $('.cont-response').removeClass('d-none').hide().fadeIn();
         });
     })
 })
