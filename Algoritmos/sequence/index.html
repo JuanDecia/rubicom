@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+     <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Bootstrap -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"
+    />
+    <title>Secuencia</title>
+</head>
+<body>
+
+    <!-- Main Content Container -->
+    <main class='
+                container-fluid 
+                d-flex 
+                w-50 
+                mt-5 
+                justify-content-center 
+                align-items-center  
+                bg-secondary 
+                bg-opacity-75
+    '>
+
+        <!-- Content Container -->
+        <div class='container p-2 main-content'>
+
+            <div class='container-fluid text-center'>
+                <h1 class="text-light">Secuencias</h1>
+            </div>
+
+            <div class='p-4'>
+                
+                <!-- Form -->
+                <form id="sequence-form" method="post" action="">
+
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <label for="longitud" class="fs-4 text-light">
+                            Ingrese longitud para la secuencia: 
+                        </label>
+
+                        <div class="mt-3 ">
+                            <input type="number" name="longitud" id="longitud" class="p-2" />
+                        </div>
+                    </div>
+
+                    <div class="mt-4 d-flex justify-content-center">
+                        <button class="btn btn-primary">Ejecutar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="d-none cont-response container bg-light p-3 w-50">
+                <div class="response"></div>
+            </div>
+        </div>
+    </main>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- JS -->
+<script src="index.js"></script>
+</body>
+</html>
