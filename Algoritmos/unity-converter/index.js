@@ -20,7 +20,7 @@ $(document).ready(() => {
             switch (objectResponse.unityConverter) {
 
                 case 'pulgadas':
-                    result = toFixed(objectResponse.meter * 39.3701);
+                    result = (objectResponse.meter * 39.3701).toFixed(2);
                     break;
 
                 case 'centimetros':
@@ -28,7 +28,7 @@ $(document).ready(() => {
                     break;
 
                 case 'pies':
-                    result = toFixed(objectResponse.meter * 3.28084);
+                    result = (objectResponse.meter * 3.28084).toFixed(2);
                     break;
 
                 default:
