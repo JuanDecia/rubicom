@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $userNumber = $_POST['user-number'];
+    $userNumber = intval($_POST['user-number']);
 
     header('application/json');
 
