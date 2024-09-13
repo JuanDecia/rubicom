@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-    $('#calcular-costo').submit( function(e) {
+    $('#password-form').submit( function(e) {
 
         e.preventDefault()
         let dataForm = $(this).serialize();
@@ -10,22 +10,44 @@ $(document).ready(() => {
             console.log('Respuesta: ', response);
             const responseObject = JSON.parse(response);
 
-            console.log('Monto: ', responseObject.monto);
-            console.log('Propina: ', responseObject.propina);
+            console.log('longitud: ', responseObject.longitud);
             
             // Process data
             
-            let totalPropina = (responseObject.monto * responseObject.propina) / 100;
-            console.log('Propina: ', totalPropina);
-            
-            let totalCuenta = (responseObject.monto + totalPropina);
-            console.log('Total: ', totalCuenta);
+            // Definir los caracteres básicos
+            let caracteres = 'abcdefghijklmnopqrstuvwxyz';
+
+            // Agregar mayúsculas si es necesario
+            if (responseObject.incluirMayuscula) {
+                caracteres += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            }
+
+            // Agregar números si es necesario
+            if (responseObject.incluirMinuscula) {
+                caracteres += '0123456789';
+            }
+
+            // Agregar caracteres especiales si es necesario
+            if (responseObject.caracteresEspeciales) {
+                caracteres += '!@#$%^&*()-_=+[]{}|;:,.<>?';
+            }
+
+            // Generar la contraseña
+            let password = '';
+
+            for ( let i = 0; i < responseObject.longitud; i++ ) {
+                // Generar un índice aleatorio
+                const randomIndex = Math.floor(Math.random() * caracteres.length);
+                // Seleccionar un carácter al azar
+                password += caracteres[randomIndex];
+            }
+
+            // Mostrar la contraseña generada
+            console.log('Contraseña generada:', password);
+
             
             $('.response').text(`
-                El monto neto de su cuenta es ${responseObject.monto}
-                El porcentaje de su propina es de ${responseObject.propina}%
-                es equivalente a ${totalPropina} del valor de su cuenta.
-                El monto total a abonar es de ${totalCuenta}.
+                Contraseña generada: ${password}
             `);
 
         }).fail((response) => {
