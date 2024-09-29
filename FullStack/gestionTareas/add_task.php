@@ -1,9 +1,13 @@
 <?php
+
+require_once 'TaskManager.php';
+
 if (isset($_POST['task'])) {
+    $taskManager = new TaskManager('tasks.json');
+
     $task = $_POST['task'];
-    $tareas = json_decode(file_get_contents('tasks.json'), true);
-    $tareas[] = ["name" => $task];
-    file_put_contents('tasks.json', json_encode($tareas));
+    $taskManager->addTask($task);
+
     echo 'Tarea añadida con éxito';
 }
 ?>

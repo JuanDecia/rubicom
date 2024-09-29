@@ -1,10 +1,13 @@
 <?php
+
+require_once 'TaskManager.php';
+
 if (isset($_POST['id'])) {
+    $taskManager = new TaskManager('tasks.json');
+
     $taskId = $_POST['id'];
-    $tareas = json_decode(file_get_contents('tasks.json'), true);
-    unset($tareas[$taskId]); // Eliminar la tarea
-    $tareas = array_values($tareas); // Reindexar el array
-    file_put_contents('tasks.json', json_encode($tareas));
+    $taskManager->deleteTask($taskId);
+    
     echo 'Tarea eliminada con éxito';
 }
 ?>

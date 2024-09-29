@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Buscador de Películas</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Búsqueda de Películas</h1>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <form id="movieForm">
+            <div class="mb-3">
+              <label for="title" class="form-label"
+                >Título de la 19 Prácticas fullstack Aprendé a programar
+                Película</label
+              >
+              <input
+                type="text"
+                id="title"
+                class="form-control"
+                placeholder="Ingresa el título de la película"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Buscar Película
+            </button>
+          </form>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h2>Resultado de la Búsqueda</h2>
+          <div id="movieResult" class="mt-4">
+            <!-- Aquí se mostrarán los datos de la película -->
+          </div>
+          <h3 class="mt-5">Historial de Búsquedas</h3>
+          <ul id="historyList" class="list-group">
+            <!-- Aquí se mostrará el historial de búsquedas -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -12,7 +12,11 @@ class TaskManager {
 
     public function addTask($task) {
         $tasks = $this->getTasks();
-        $tasks[] = ["name" => $task];
+        
+        $tasks[] = [
+            "name" => $task
+        ];
+
         file_put_contents($this->file, json_encode($tasks));
     }
 
