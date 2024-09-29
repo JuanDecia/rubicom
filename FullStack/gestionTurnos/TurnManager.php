@@ -36,7 +36,7 @@ class TurnManager {
         }
     }
 
-    public function deleteTurn($id, $turn) {
+    public function deleteTurn($id) {
         $turns = $this->getTurns();
         unset($turns[$id]);
         $turns = array_values($turns);
