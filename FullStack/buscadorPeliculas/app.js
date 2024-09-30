@@ -1,53 +1,49 @@
 $(document).ready(function () {
-    //get history search
-    const getHistory = () => {
-        $.ajax({
-            url: 'get_history.php',
-            method: 'GET',
-            success: function (response) {
-                let history = JSON.parse(response);
-                let historyList = '';
-
-                history.forEach( (movie) => {
-                    historyList += `
-                        <li class='list-group-item'>${movie.title} (${movie.year})</li>
-                    `;
-                });
-                $('#historyList').html(historyList);
-            }
+  // Función para obtener el historial de búsquedas
+  function getHistory() {
+    $.ajax({
+      url: "get_history.php",
+      method: "GET",
+      success: function (response) {
+        let history = JSON.parse(response);
+        let historyList = "";
+        history.forEach(function (movie) {
+          historyList += `<li class="list-group-item">${movie.title} (${movie.year})</li>`;
         });
-    }
-
-    // Load history when page loads
-    getHistory();
-
-    // Handler movie search
-    $('#movieForm').on('submit', function (e) {
-        e.preventDefault();
-
-        let title = $('#title').val();
-        if (title) {
-            $.ajax({
-                url: 'get_movie.php',
-                method: 'POST',
-                data: { title: title },
-                success: function (response) {
-                    let movie = JSON.parse(response);
-                    if (movie.response === 'true') {
-                        $('#movieResult').html(`
-                            <h3>${movie.title} (${movie.year})</h3>
-                            <p><strong>Director:</strong> ${movie.Director}</p>
-                            <p><strong>Actores:</strong> ${movie.Actors}</p>
-                            <p><strong>Sinopsis:</strong> ${movie.Plot}</p>
-                        `);
-                        getHistory();
-                    } else {
-                        $('#movieResult').html(`
-                            <p class=''text-danger'>Pelicula no encontrada</p>
-                        `);
-                    }
-                }
-            });
-        }
+        $("#historyList").html(historyList);
+      },
     });
+  }
+  // Cargar el historial cuando se carga la página
+  getHistory();
+  // Manejar la búsqueda de película
+  $("#movieForm").on("submit", function (e) {
+    e.preventDefault();
+    let title = $("#title").val();
+    if (title) {
+      $.ajax({
+        url: "get_movie.php",
+        method: "POST",
+        data: { title: title },
+        success: function (response) {
+          let movie = JSON.parse(response);
+          if (movie.Response === "True") {
+            $("#movieResult").html(`
+                <h3>${movie.Title} (${movie.Year})</h3>
+                <p><strong>Director:</strong> ${movie.Director}</p>
+                <p><strong>Actores:</strong> ${movie.Actors}</p>
+                <p><strong>Sinopsis:</strong> ${movie.Plot}</p>
+            `);
+
+            getHistory();
+            
+          } else {
+            $("#movieResult").html(`
+                <p class="text-danger">Película noencontrada.</p>`
+            );
+          }
+        },
+      });
+    }
+  });
 });
