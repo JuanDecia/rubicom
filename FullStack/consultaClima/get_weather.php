@@ -2,7 +2,7 @@
 
 if (isset($_POST['city'])) {
     $city = $_POST['city'];
-    $apiKey = 'Reemplaza por: OpenWeatherMap';
+    $apiKey = '7e6d2b8dd901917d46edca5fea3a50bc';
 
     // api
     $apiUrl = "http://api.openweathermap.org/data/2.5/weather?q={$city}&appid={$apiKey}";

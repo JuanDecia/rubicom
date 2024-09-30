@@ -14,7 +14,7 @@ $(document).ready(function () {
                     if (data.cod === 200) {
                         $('#weatherResult').html(`
                             <h3>Clima en ${data.name}, ${data.sys.country}</h3>
-                            <p>Temperatura: ${(data.main.temp - 273.15).toFixed(1)}°C</p>
+                            <p><i class="bi bi-thermometer-half"></i>Temperatura: ${(data.main.temp - 273.15).toFixed(1)}°C</p>
                             <p>Condiciones: ${data.weather[0].description}</p>
                             <p>Humedad: ${data.main.humidity}%</p>
                             <p>Viento: ${data.wind.speed}m/s</p>
