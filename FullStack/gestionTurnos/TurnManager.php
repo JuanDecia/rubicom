@@ -26,12 +26,12 @@ class TurnManager {
     public function editTurn($id, $name, $datetime) {
         $turns = $this->getTurns();
 
-        // Verificar si el ID existe antes de editar
+        // Check ID after it edits
         if (isset($turns[$id])) {
             $turns[$id]['name'] = $name;
             $turns[$id]['datetime'] = $datetime;
 
-            // Guardar cambios en el archivo JSON
+            // Save changes into json file
             file_put_contents($this->file, json_encode($turns));
         }
     }

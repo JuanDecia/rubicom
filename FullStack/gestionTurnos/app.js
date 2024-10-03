@@ -66,11 +66,11 @@ $(document).ready(function () {
       document.getElementById("editTurnModal")
     );
 
-    let turnId = $(this).data("id"); // Obtener ID
-    let turnName = $(this).data("name"); // Obtener Nombre
-    let turnDatetime = $(this).data("datetime"); // Obtener fecha y hora
+    let turnId = $(this).data("id"); // get ID
+    let turnName = $(this).data("name"); // Get name
+    let turnDatetime = $(this).data("datetime"); // Get date & time
 
-    // Asignar valores al formulario del modal
+    // asign values to modal form
     $("#editTurnId").val(turnId);
     $("#editTurnName").val(turnName);
     $("#editTurnDatetime").val(turnDatetime);
@@ -78,7 +78,7 @@ $(document).ready(function () {
     editModal.show();
   });
 
-  // Guardar cambios y cerrar el modal
+  // save changes & close modal
   $("#saveEditTurn").on("click", function () {
     let turnId = $("#editTurnId").val();
     let newTurnName = $("#editTurnName").val();
@@ -95,7 +95,7 @@ $(document).ready(function () {
         },
         success: function (response) {
           console.log(response);
-          getTurns(); // Llama a tu función para actualizar la lista de turnos
+          getTurns(); // Function call to update turn list
           $("#editTurnModal").modal("hide");
         },
         error: function () {
