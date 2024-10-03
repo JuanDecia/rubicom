@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Tareas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="container d-flex flex-column mt-5">
-      <h1 class="text-center">Gestión de Tareas</h1>
-      <div class="row">
+    <!-- Main Container -->
+    <div class="container d-flex flex-column gap-4 mt-4">
+      <!-- Heading Container -->
+      <div class="heading-container d-flex justify-content-center">
+        <h1>Gestión de Tareas</h1>
+      </div>
+      <!-- New Task Container -->
+      <div class="row p-2">
+        <!-- Form Container -->
         <div class="col-md-6 offset-md-3">
-          <form id="taskForm">
+          <form id="taskForm" class="">
             <div class="mb-3">
-              <label for="task" class="form-label">Nueva Tarea</label>
-              <input type="text" id="task" class="form-control" placeholder="Escribe una tarea" required>
+              <label for="task" class="form-label d-flex justify-content-center mb-4 fs-3">Nueva Tarea</label>
+              <input
+                type="text"
+                id="task"
+                class="form-control"
+                placeholder="Escribe una tarea"
+                required
+              />
             </div>
-            <button type="submit" class="btn btn-primary">Añadir Tarea</button>
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary">Añadir Tarea</button>
+            </div>
           </form>
         </div>
       </div>
-      <hr>
+
+      <hr />
+
+      <!-- List tasks container -->
       <div class="row">
         <div class="col-md-8 offset-md-2">
           <h2>Lista de Tareas</h2>
@@ -33,39 +54,74 @@
               </tr>
             </thead>
             <tbody id="taskList">
-              <!-- Aquí se cargarán las tareas mediante AJAX -->
+              <!-- Render tasks from Ajax -->
             </tbody>
           </table>
         </div>
       </div>
     </div>
-    
-    <!-- Modal para Editar Tarea -->
-    <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+
+    <!-- Modal to edit task -->
+    <div
+      class="modal fade"
+      id="editTaskModal"
+      tabindex="-1"
+      aria-labelledby="editTaskModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="editTaskModalLabel">Editar Tarea</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
-            <input type="hidden" id="editTaskId">
+            <input type="hidden" id="editTaskId" />
             <div class="mb-3">
               <label for="editTaskInput" class="form-label">Tarea</label>
-              <input type="text" id="editTaskInput" class="form-control" required>
+              <input
+                type="text"
+                id="editTaskInput"
+                class="form-control"
+                required
+              />
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary" id="saveEditTask">Guardar Cambios</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary" id="saveEditTask">
+              Guardar Cambios
+            </button>
           </div>
         </div>
       </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
   </body>
-  </html>
+</html>
+
+<!-- 
+  MODIFICACIONES ARCHIVO MAIN  
+
+  * Se agrega un contenedor 'div' con un 'display flex' al elemento h1 para
+    realizar un modelo adaptativo a los diferentes viewports de los distintos
+    dispositivos.
+
+  * Se realiza la misma práctica al contenedor de agregar tareas para que el 
+    contenido siempre quede centrado.
   
+-->

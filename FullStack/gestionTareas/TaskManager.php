@@ -1,4 +1,6 @@
 <?php
+
+// Class to get, edit, add & delete tasks
 class TaskManager {
     private $file;
 
@@ -9,6 +11,7 @@ class TaskManager {
     public function getTasks() {
         return json_decode(file_get_contents($this->file), true);
     }
+
 
     public function addTask($task) {
         $tasks = $this->getTasks();
@@ -29,7 +32,7 @@ class TaskManager {
     public function deleteTask($id) {
         $tasks = $this->getTasks();
         unset($tasks[$id]);
-        $tasks = array_values($tasks); // Reindexar el array
+        $tasks = array_values($tasks); // Array reindex
         file_put_contents($this->file, json_encode($tasks));
     }
 }
