@@ -1,0 +1,7 @@
+.container {
+    max-width: 80%;
+}
+
+#movieResult  {
+    border: 1px solid black;
+}

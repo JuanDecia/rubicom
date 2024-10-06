@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  // Función para obtener el historial de búsquedas
+  // Get History Search
   function getHistory() {
     $.ajax({
       url: "get_history.php",
@@ -14,9 +14,10 @@ $(document).ready(function () {
       },
     });
   }
-  // Cargar el historial cuando se carga la página
+  // Load Histori when page refreshs
   getHistory();
-  // Manejar la búsqueda de película
+
+  // Handler movie search
   $("#movieForm").on("submit", function (e) {
     e.preventDefault();
     let title = $("#title").val();
@@ -33,6 +34,7 @@ $(document).ready(function () {
                 <p><strong>Director:</strong> ${movie.Director}</p>
                 <p><strong>Actores:</strong> ${movie.Actors}</p>
                 <p><strong>Sinopsis:</strong> ${movie.Plot}</p>
+                <img src="${movie.Poster}" alt="Poster de ${movie.Title}" class="img-fluid" />
             `);
 
             getHistory();
